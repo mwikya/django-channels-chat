@@ -1,41 +1,37 @@
-# Rapid-ChatXChannels
-A rapid fire tutorial and introduction of Django Channels. To get more in-depth check out the full course https://kirr.co/badl8e
-
-
-YouTube Video: __coming soon__
-
-
 
 ### Recommended Start
 ```bash
 
 $ cd path/to/your/dev/folder
-$ mkdir channels-rapid
-$ cd channels-rapid
-$ git clone https://github.com/codingforentrepreneurs/Rapid-ChatXChannels .
-$ git reset a9a2c42052c87fd2eb5acdc417729f9359a1e087 --hard
+$ mkdir django-channels-chat
+$ cd django-channels-chat
+$ git clone https://github.com/mwikya/django-channels-chat.git .
+$ git reset --hard
 $ git remote remove origin
 $ virtualenv -p python3 .
 $ source bin/activate
-(channels-rapid) $ pip install -r requirements.txt
-(channels-rapid) $ cd src
-(channels-rapid) $ python manage.py migrate
-(channels-rapid) $ python manage.py createsuperuser
+(django-channels-chat) $ pip install -r requirements.txt
+(django-channels-chat) $ cd src
+(django-channels-chat) $ python manage.py migrate
+(django-channels-chat) $ python manage.py createsuperuser
 ... do the creation
-(channels-rapid) $ python manage.py createsuperuser
+(django-channels-chat) $ python manage.py createsuperuser
 ... create second super user 
 ```
 
 
 ### Install Redis
 1. Download Redis
-    - Using [Homebrew](http://brew.sh):
         ```
-        brew install redis
+          sudo apt-get update
+          sudo apt-get upgrade
 
-        brew services start redis
+          sudo apt-get install redis-server
+
+          sudo systemctl enable redis-server.service
+
+
         ```
-        Brew permission errors? Try `sudo chown -R "$USER":admin /usr/local`
 
     - Direct [Download](http://redis.io/download)
 
@@ -48,31 +44,4 @@ $ source bin/activate
         PONG
         ```
 
-    - **redis-server**
-        ```
-        $ redis-server
-        86750:C 08 Nov 08:17:21.431 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
-        86750:M 08 Nov 08:17:21.433 * Increased maximum number of open files to 10032 (it was originally set to 256).
-                        _._                                                  
-                   _.-``__ ''-._                                             
-              _.-``    `.  `_.  ''-._           Redis 3.2.5 (00000000/0) 64 bit
-          .-`` .-```.  ```\/    _.,_ ''-._                                   
-         (    '      ,       .-`  | `,    )     Running in standalone mode
-         |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
-         |    `-._   `._    /     _.-'    |     PID: 86750
-          `-._    `-._  `-./  _.-'    _.-'                                   
-         |`-._`-._    `-.__.-'    _.-'_.-'|                                  
-         |    `-._`-._        _.-'_.-'    |           http://redis.io        
-          `-._    `-._`-.__.-'_.-'    _.-'                                   
-         |`-._`-._    `-.__.-'    _.-'_.-'|                                  
-         |    `-._`-._        _.-'_.-'    |                                  
-          `-._    `-._`-.__.-'_.-'    _.-'                                   
-              `-._    `-.__.-'    _.-'                                       
-                  `-._        _.-'                                           
-                      `-.__.-'                                               
-
-        86750:M 08 Nov 08:17:21.434 # Server started, Redis version 3.2.5
-        86750:M 08 Nov 08:17:21.434 * The server is now ready to accept connections on port 6379
-
-        ```
         **Close Redis** with `control` + `c` to quit
