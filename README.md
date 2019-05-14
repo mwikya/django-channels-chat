@@ -22,16 +22,15 @@ $ source bin/activate
 
 ### Install Redis
 1. Download Redis
-        ```
-          sudo apt-get update
-          sudo apt-get upgrade
-
-          sudo apt-get install redis-server
-
-          sudo systemctl enable redis-server.service
-
 
         ```
+        bash          
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get install redis-server
+        sudo systemctl enable redis-server.service
+        ```
+
 
     - Direct [Download](http://redis.io/download)
 
